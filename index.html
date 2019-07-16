@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>index</title>
+		<link rel="stylesheet" href="lib/Cesium1.57/Widgets/widgets.css" />
+		<style>
+			html,
+			body,
+			#map {
+				width: 100%;
+				height: 100%;
+			}
+
+			#toolBar {
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				z-index: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map">
+		</div>
+	</body>
+
+	<script src="lib/Cesium1.57/Cesium.js"></script>
+	<script src="lib/jquery/jquery-2.1.4.min.js"></script>
+	<script>
+		//各种在线的mapserver服务 https://services.arcgisonline.com/arcgis/rest/services
+		var viewer = new Cesium.Viewer('map', {
+			imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+				url: "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer"
+			}),
+// 			terrainProvider: new Cesium.CesiumTerrainProvider({ //加载火星在线地形
+// 				url: "http://data.marsgis.cn/terrain"
+// 			})
+		});
+	</script>
+</html>
